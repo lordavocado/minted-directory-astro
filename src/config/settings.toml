@@ -15,6 +15,7 @@ url = "https://yourdomain.com"
 [directoryData.source]
 name = "json"    # default, mock, sheets, json
 links = "normal"
+linksOutbound = false
 
 [directoryData.tagPages]
 title = "{0} Items"
