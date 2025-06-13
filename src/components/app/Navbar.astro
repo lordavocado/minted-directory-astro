@@ -1,6 +1,5 @@
 ---
 import { Icon } from "astro-icon/components";
-import ColorSelector from "./header/ColorSelector.astro";
 import Logo from "./Logo.astro";
 import config from "@util/themeConfig";
 
@@ -17,7 +16,7 @@ const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <nav
-  class="bg-white dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600"
+  class="bg-white border-b border-gray-200"
 >
   <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
     <div class="relative flex h-16 justify-between">
@@ -53,8 +52,8 @@ const currentPath = new URL(Astro.request.url).pathname;
                   href={navItem.href}
                   class={`inline-flex gap-2 items-center border-b-2 px-1 pt-1 text-sm font-medium ${
                     isActive(navItem.href, currentPath)
-                      ? "border-primary-500 text-gray-900 dark:text-gray-50"
-                      : "border-transparent hover:border-gray-300 dark:hover:border-gray-500 hover:text-gray-700 text-gray-500 dark:text-gray-200"
+                      ? "border-primary-500 text-gray-900"
+                      : "border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500"
                   }`}
                 >
                   {navItem.name}
@@ -63,7 +62,7 @@ const currentPath = new URL(Astro.request.url).pathname;
                 <a
                   href={navItem.href}
                   target="_blank"
-                  class="inline-flex gap-2 items-center border-b-2 px-1 pt-1 text-sm font-medium border-transparent hover:border-gray-300 hover:text-gray-700 dark:hover:border-gray-500 text-gray-500 dark:text-gray-200"
+                  class="inline-flex gap-2 items-center border-b-2 px-1 pt-1 text-sm font-medium border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500"
                 >
                   {navItem.name}
                   <Icon name="tabler:external-link" />
@@ -74,21 +73,16 @@ const currentPath = new URL(Astro.request.url).pathname;
         </div>
       </div>
 
-      <!-- Action button and color selector -->
+      <!-- Action button -->
       <div
         class="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0"
       >
         <div
           class="flex gap-2 items-center md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse"
         >
-          {
-            config.header.navbar.colorModeSelector && (
-              <ColorSelector transition:persist class="hidden md:flex" />
-            )
-          }
           <a
             href={config?.header.actionButton?.href}
-            class="hidden md:block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+            class="hidden md:block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
           >
             {config?.header.actionButton?.text}
           </a>
@@ -121,7 +115,7 @@ const currentPath = new URL(Astro.request.url).pathname;
       <div class="flex items-center px-4">
         <a
           href={config?.header.actionButton?.href}
-          class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-primary-600 dark:hover:bg-primary-700 dark:focus:ring-primary-800"
+          class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
         >
           {config?.header.actionButton?.text}
         </a>

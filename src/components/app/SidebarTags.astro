@@ -5,14 +5,14 @@ const emoji = themeConfig.layout.emoji;
 ---
 
 <div
-  class="hidden md:block max-w-50 w-full border-r border-gray-200 dark:border-gray-700 dark:text-gray-50"
+  class="hidden md:block max-w-50 w-full border-r border-gray-200"
 >
   <a
-    class="flex mt-2 text-sm font-medium text-gray-700 dark:text-gray-300 items-center gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+    class="flex mt-2 text-sm font-medium text-gray-700 items-center gap-2 px-4 py-2 hover:bg-gray-100"
     href="/"
   >
     <span
-      class="border border-gray-200 dark:border-gray-600 rounded h-7 w-7 inline-flex items-center justify-center"
+      class="border border-gray-200 rounded h-7 w-7 inline-flex items-center justify-center"
       >{emoji && "🏠"}</span
     >
     <span>Home</span>
@@ -20,10 +20,10 @@ const emoji = themeConfig.layout.emoji;
   {
     tags.map((tag) => (
       <a
-        class="flex items-center text-sm font-medium text-gray-700 dark:text-gray-300 gap-2 px-4 py-2 hover:bg-gray-100 dark:hover:bg-gray-700"
+        class="flex items-center text-sm font-medium text-gray-700 gap-2 px-4 py-2 hover:bg-gray-100"
         href={`/tags/${tag.key}`}
       >
-        <span class="border border-gray-200 dark:border-gray-600 rounded h-7 w-7 inline-flex items-center justify-center">
+        <span class="border border-gray-200 rounded h-7 w-7 inline-flex items-center justify-center">
           {tag.emoji && tag.emoji}
         </span>
         <span>{tag.name}</span>

@@ -3,87 +3,54 @@
 theme = 'brookmint'
 
 [general]
-title = "Meditation Apps"
+title = "Directory"
 logo = ""
-iconLogo = "tabler:coffee"
+iconLogo = "tabler:grid-dots"
 
 [general.seo]
-name = "Cafe Directory"
-description = "Find the best nuxt starter kits."
-url = "https://nuxtstarters.com"
+name = "Directory"
+description = "A clean directory for your entities."
+url = "https://yourdomain.com"
 
 [directoryData.source]
 name = "json"    # default, mock, sheets, json
 links = "normal"
 
 [directoryData.tagPages]
-title = "{0} Apps"
+title = "{0} Items"
 
 [directoryData.search]
-placeholder = "Search among {0} listings of this directory :)"
+placeholder = "Search among {0} listings"
 
 [[directoryData.tags]]
-key = "breathing"
-name = "Breathing"
+key = "example"
+name = "Example"
 color = "blue"
-emoji = "👃"
-description = "Breathing techniques are a popular feature in meditation apps."
-
-[[directoryData.tags]]
-key = "sleep"
-name = "Sleep"
-color = "green"
-emoji = "💤"
-description = "Some apps include music that slowly goes away to help you sleep better and rest."
-
-[[directoryData.tags]]
-key = "meditation"
-name = "Meditation"
-color = "purple"
-emoji = "🧘‍♂️"
-description = "A meditation for your life. It's a great way to relax and clear your mind. It's also a great way to improve your sleep."
-
-[[directoryData.tags]]
-key = "yoga"
-name = "Yoga"
-color = "purple"
-emoji = "🧘‍♂️"
-description = "A yoga for your life."
-
-[[directoryData.tags]]
-key = "timer"
-name = "Timer"
-color = "green"
-emoji = "⏰"
-description = "Timers can be used to track how much you meditate."
+emoji = "📝"
+description = "Example category for demonstration."
 
 [header.banner]
-show = true
-text = "Follow mark_bruderer on twitter."
-link = "https://x.com/intent/follow?screen_name=mark_bruderer"
-brandText = "AI Agent Libraries"
+show = false
+text = ""
+link = ""
+brandText = ""
 
 [header.navbar]
-colorModeSelector = true
+colorModeSelector = false
 
 [[header.navbar.links]]
 name = "Blog"
 href = "/blog"
 
-[[header.navbar.links]]
-name = "Analytics"
-href = "https://us.posthog.com/shared/vHlGCcSqPjGH4r_QijaXSETtmN9J-g"
-target = "_blank"
-
 [header.actionButton]
-text = "Submit an app"
-href = "https://tally.so"
+text = "Submit"
+href = "#"
 
 [footer]
-description = "Best directory for my niche."
+description = "A clean directory for your entities."
 
 [footer.socials.x]
-link = "https://x.com/mark_bruderer"
+link = "https://x.com/yourusername"
 
 [footer.socials.youtube]
-link = "https://www.youtube.com/@mark_hacks"
+link = "https://www.youtube.com/@yourchannel"

@@ -2,9 +2,10 @@ import Grid from '@/components/directory/Grid.astro'
 import SimpleLeftHero from '@/components/hero/SimpleLeftHero.astro'
 import Search from '@/components/directory/Search.astro'
 
-# Minted Directory
-
-Welcome to this fully customizable directory.
+<SimpleLeftHero>
+  <span slot="heading">Welcome to Your Directory</span>
+  <span slot="description">A clean, customizable directory template ready for your content. Start by adding your entities to the directory.json file or configure other data sources.</span>
+</SimpleLeftHero>
 
 <Search />
 
