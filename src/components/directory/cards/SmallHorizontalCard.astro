@@ -6,33 +6,35 @@ const type = "small-horizontal";
 ---
 
 <a
-  class="relative flex items-center bg-gray-100 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 p-3 rounded-lg"
+  class="relative flex items-center bg-white border border-gray-200 hover:border-gray-300 hover:shadow-md p-4 rounded-xl group transition-all duration-300 card-hover"
   href={href}
 >
   { myItem.featured ? <DirectoryFeaturedTag class="ml-6"  /> : <></> }
-  <div class="flex-none mr-3 rounded-none w-16 h-16 overflow-hidden">
+  <div class="flex-none mr-4 rounded-lg w-16 h-16 overflow-hidden">
     {
       myItem.image ? (
         <Image
-          class="w-16 h-16 object-cover"
+          class="w-16 h-16 object-cover group-hover:scale-105 transition-transform duration-300"
           src={myItem.image}
           alt={myItem.title}
           loading="lazy"
         />
       ) : (
-        <div class="w-16 h-16 bg-gray-200 dark:bg-gray-700 rounded-lg" />
+        <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
+          <span class="text-gray-500 font-semibold text-sm">{myItem.title.charAt(0)}</span>
+        </div>
       )
     }
   </div>
 
-  <div class="flex-grow">
-    <div class="flex items-center justify-between mb-0.5">
-      <h3 class="font-bold line-clamp-1 text-ellipsis overflow-hidden card-title">
+  <div class="flex-grow min-w-0">
+    <div class="flex items-center justify-between mb-1">
+      <h3 class="font-semibold text-gray-900 line-clamp-1 text-ellipsis overflow-hidden card-title group-hover:text-primary-600 transition-colors duration-200">
         {myItem.title}
       </h3>
     </div>
 
-    <p class="text-sm md:text-xs text-gray-600 dark:text-gray-400 line-clamp-2 card-description">
+    <p class="text-sm text-gray-600 line-clamp-2 leading-relaxed card-description">
       {myItem.description}
     </p>
   </div>

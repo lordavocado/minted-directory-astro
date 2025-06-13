@@ -28,22 +28,31 @@ function addTagWithEvent(event: Event) {
 </script>
 
 <template>
-  <div class="flex m-0 gap-4 mt-4 py-2">
-    <div v-for="myTag in selectedTags"
-      class="relative group border-2 shadow-sm font-semibold text-blue-500 bg-blue-600/10 rounded-lg px-1.5 py-1 inline-flex items-center justify-center"
-      :class="`border-blue-500`">
-      <span @click="() => removeTag(myTag)"
-        class="absolute text-gray-500 opacity-0 transition-all group-hover:opacity-100 hover:bg-gray-100 flex items-center justify-center -top-4 left-0 bg-white rounded-full h-6 w-6 border dark:bg-gray-700 dark:border-gray-600 dark:hover:bg-gray-800">
+  <div class="flex flex-wrap gap-3">
+    <div 
+      v-for="myTag in selectedTags"
+      :key="myTag"
+      class="relative group inline-flex items-center gap-2 px-3 py-2 bg-primary-50 text-primary-700 border border-primary-200 rounded-full text-sm font-medium transition-all duration-200"
+    >
+      <span>{{ myTag }}</span>
+      <button
+        @click="() => removeTag(myTag)"
+        class="ml-1 inline-flex items-center justify-center w-4 h-4 text-primary-500 hover:text-primary-700 hover:bg-primary-100 rounded-full transition-colors duration-200 focus:outline-none"
+      >
         <slot />
-      </span>
-      {{ myTag }}
+      </button>
     </div>
-    <select @change="addTagWithEvent"
-      class="border border-dashed border-gray-300 rounded-lg font-semibold text-gray-500 dark:border-gray-500 dark:bg-gray-700 dark:text-gray-400 focus:ring-primary-500 focus:ring-2 focus:border-none ring-offset-4">
+    
+    <select 
+      @change="addTagWithEvent"
+      class="inline-flex items-center px-4 py-2 border border-dashed border-gray-300 rounded-full text-sm font-medium text-gray-600 bg-white hover:bg-gray-50 hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-all duration-200 cursor-pointer"
+    >
       <option value="" disabled selected>
-        Select a tag
+        + Add filter
       </option>
-      <option v-for="tag in availableTags" :key="tag.name" :value="tag.name">{{ tag.name }}</option>
+      <option v-for="tag in availableTags" :key="tag.key" :value="tag.key">
+        {{ tag.emoji ? `${tag.emoji} ` : '' }}{{ tag.name }}
+      </option>
     </select>
   </div>
 </template>
@@ -51,16 +60,12 @@ function addTagWithEvent(event: Event) {
 <style scoped>
 select {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3E%3Cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='m6 8 4 4 4-4'/%3E%3C/svg%3E");
-  padding-right: 2.5;
   background-repeat: no-repeat;
-  background-size: 1.5em 1.5em;
-  background-position: right .5rem center;
-  line-height: 1.5rem;
-  padding: .5rem .75rem;
-  font-size: 1rem;
+  background-size: 1.25em 1.25em;
+  background-position: right 0.75rem center;
+  padding-right: 2.5rem;
   -webkit-appearance: none;
   -moz-appearance: none;
-  text-indent: 1px;
-  text-overflow: '';
+  appearance: none;
 }
 </style>

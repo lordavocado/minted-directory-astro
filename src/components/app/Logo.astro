@@ -3,24 +3,24 @@ import { Icon } from "astro-icon/components";
 import config from "@util/themeConfig";
 ---
 
-<a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
+<a href="/" class="flex items-center space-x-3 rtl:space-x-reverse group">
   {
     config.general.logo ? (
       <img
         sizes="32px"
         src={config.general.logo}
-        class="h-8"
+        class="h-8 transition-transform duration-200 group-hover:scale-105"
         alt={config?.general.title + " Logo"}
       />
     ) : (
       <Icon
-        class="w-7 h-7 text-gray-600 dark:text-white"
+        class="w-8 h-8 text-primary-600 transition-colors duration-200 group-hover:text-primary-700"
         name={config?.general?.iconLogo}
       />
     )
   }
   <span
-    class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white"
+    class="self-center text-xl font-bold text-gray-900 whitespace-nowrap transition-colors duration-200 group-hover:text-primary-600"
     >{config.general.title}</span
   >
 </a>

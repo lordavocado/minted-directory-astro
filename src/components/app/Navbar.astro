@@ -16,21 +16,21 @@ const currentPath = new URL(Astro.request.url).pathname;
 ---
 
 <nav
-  class="bg-white border-b border-gray-200"
+  class="bg-white/80 backdrop-blur-md border-b border-gray-200 sticky top-0 z-50"
 >
-  <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
-    <div class="relative flex h-16 justify-between">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="relative flex h-16 justify-between items-center">
       <!-- Mobile menu button -->
       <div class="absolute inset-y-0 left-0 flex items-center sm:hidden">
         <button
           id="mobile-menu-button"
-          class="relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500"
+          class="relative inline-flex items-center justify-center rounded-lg p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary-500 transition-colors duration-200"
           aria-label="Open main menu"
         >
           <span class="sr-only">Open main menu</span>
           <Icon
             id="mobile-menu-icon"
-            name="tabler:baseline-density-medium"
+            name="tabler:menu-2"
             class="block h-6 w-6"
             aria-hidden="true"
           />
@@ -44,13 +44,13 @@ const currentPath = new URL(Astro.request.url).pathname;
         <div class="flex flex-shrink-0 items-center">
           <Logo />
         </div>
-        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+        <div class="hidden sm:ml-8 sm:flex sm:space-x-8">
           {
             config.header.navbar.links.map((navItem) =>
               navItem.target !== "_blank" ? (
                 <a
                   href={navItem.href}
-                  class={`inline-flex gap-2 items-center border-b-2 px-1 pt-1 text-sm font-medium ${
+                  class={`inline-flex gap-2 items-center border-b-2 px-1 pt-1 text-sm font-medium transition-all duration-200 ${
                     isActive(navItem.href, currentPath)
                       ? "border-primary-500 text-gray-900"
                       : "border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500"
@@ -62,10 +62,10 @@ const currentPath = new URL(Astro.request.url).pathname;
                 <a
                   href={navItem.href}
                   target="_blank"
-                  class="inline-flex gap-2 items-center border-b-2 px-1 pt-1 text-sm font-medium border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500"
+                  class="inline-flex gap-2 items-center border-b-2 px-1 pt-1 text-sm font-medium border-transparent hover:border-gray-300 hover:text-gray-700 text-gray-500 transition-all duration-200"
                 >
                   {navItem.name}
-                  <Icon name="tabler:external-link" />
+                  <Icon name="tabler:external-link" class="h-4 w-4" />
                 </a>
               ),
             )
@@ -82,7 +82,7 @@ const currentPath = new URL(Astro.request.url).pathname;
         >
           <a
             href={config?.header.actionButton?.href}
-            class="hidden md:block text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
+            class="hidden md:block btn-primary"
           >
             {config?.header.actionButton?.text}
           </a>
@@ -92,34 +92,34 @@ const currentPath = new URL(Astro.request.url).pathname;
   </div>
 
   <!-- Mobile menu -->
-  <div id="mobile-menu" class="sm:hidden hidden">
-    <div class="space-y-1 pb-4 pt-2">
+  <div id="mobile-menu" class="sm:hidden hidden bg-white border-t border-gray-200">
+    <div class="space-y-1 pb-4 pt-2 px-4">
       {
         config.header.navbar.links.map((item) => (
           <a
             href={item.href}
-            class={`block border-l-4 py-2 pl-3 pr-4 text-base font-medium ${
+            class={`block border-l-4 py-3 pl-4 pr-4 text-base font-medium transition-all duration-200 ${
               isActive(item.href, currentPath)
                 ? "bg-primary-50 border-primary-500 text-primary-700"
                 : "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700"
             }`}
           >
-            {item.name}
-            {item.target === "_blank" && <Icon name="tabler:external-link" />}
+            <div class="flex items-center gap-2">
+              {item.name}
+              {item.target === "_blank" && <Icon name="tabler:external-link" class="h-4 w-4" />}
+            </div>
           </a>
         ))
       }
     </div>
 
-    <div class="border-t border-gray-200 pb-3 pt-4">
-      <div class="flex items-center px-4">
-        <a
-          href={config?.header.actionButton?.href}
-          class="text-white bg-primary-700 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-4 py-2 text-center"
-        >
-          {config?.header.actionButton?.text}
-        </a>
-      </div>
+    <div class="border-t border-gray-200 pb-4 pt-4 px-4">
+      <a
+        href={config?.header.actionButton?.href}
+        class="btn-primary w-full text-center"
+      >
+        {config?.header.actionButton?.text}
+      </a>
     </div>
   </div>
 </nav>
@@ -135,7 +135,7 @@ const currentPath = new URL(Astro.request.url).pathname;
       const isOpen = mobileMenu.classList.toggle("hidden");
       mobileMenuIcon.setAttribute(
         "name",
-        isOpen ? "tabler:baseline-density-medium" : "tabler:x",
+        isOpen ? "tabler:menu-2" : "tabler:x",
       );
     });
   }

@@ -22,14 +22,18 @@ function toggleTagByName(tag: string) {
 </script>
 
 <template>
-  <div class="flex flex-wrap gap-2 mt-4">
-    <span
+  <div class="flex flex-wrap gap-3">
+    <button
       v-for="tag in availableTags"
-      class="border border-gray-200 rounded-md px-2 py-1 hover:bg-gray-50 dark:hover:bg-gray-900 dark:border-gray-600 cursor-pointer select-none"
-      :class="selectedTags.includes(tag.key) ? 'border-primary-500 dark:border-primary-300' : ''"
+      :key="tag.key"
+      class="inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-medium border transition-all duration-200 hover:shadow-sm focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2"
+      :class="selectedTags.includes(tag.key) 
+        ? 'bg-primary-50 text-primary-700 border-primary-200 hover:bg-primary-100' 
+        : 'bg-white text-gray-700 border-gray-200 hover:bg-gray-50 hover:border-gray-300'"
       @click="toggleTagByName(tag.key)"
     >
-      {{ tag.name }}
-    </span>
+      <span v-if="tag.emoji" class="text-base">{{ tag.emoji }}</span>
+      <span>{{ tag.name }}</span>
+    </button>
   </div>
 </template>

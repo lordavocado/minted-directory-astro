@@ -31,30 +31,134 @@
   --color-primary-950: var(--color-sky-950);
 }
 
+/* Base styles */
+body {
+  font-feature-settings: "rlig" 1, "calt" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tag styles */
 .tag {
-  @apply inline-flex items-center rounded-md px-2 py-1 text-xs font-medium ring-1 ring-inset;
+  @apply inline-flex items-center rounded-full px-3 py-1 text-xs font-medium ring-1 ring-inset transition-all duration-200;
 }
 
 .gray-tag {
-  @apply bg-gray-50 text-gray-600 ring-gray-500/10 bg-gray-400/10;
+  @apply bg-gray-50 text-gray-700 ring-gray-200 hover:bg-gray-100;
 }
 
 .green-tag {
-  @apply bg-green-50 text-green-700 ring-green-600/20;
+  @apply bg-green-50 text-green-700 ring-green-200 hover:bg-green-100;
 }
 
 .blue-tag {
-  @apply bg-blue-50 text-blue-700 ring-blue-600/20;
+  @apply bg-blue-50 text-blue-700 ring-blue-200 hover:bg-blue-100;
 }
 
 .indigo-tag {
-  @apply bg-blue-50 text-indigo-700 ring-indigo-600/20;
+  @apply bg-indigo-50 text-indigo-700 ring-indigo-200 hover:bg-indigo-100;
 }
 
+.purple-tag {
+  @apply bg-purple-50 text-purple-700 ring-purple-200 hover:bg-purple-100;
+}
+
+.pink-tag {
+  @apply bg-pink-50 text-pink-700 ring-pink-200 hover:bg-pink-100;
+}
+
+.red-tag {
+  @apply bg-red-50 text-red-700 ring-red-200 hover:bg-red-100;
+}
+
+.orange-tag {
+  @apply bg-orange-50 text-orange-700 ring-orange-200 hover:bg-orange-100;
+}
+
+.yellow-tag {
+  @apply bg-yellow-50 text-yellow-700 ring-yellow-200 hover:bg-yellow-100;
+}
+
+/* Utility classes */
 .highlight span {
-  @apply bg-gray-800 text-white px-1 -rotate-6;
+  @apply bg-gray-800 text-white px-2 py-1 rounded -rotate-1 shadow-sm;
 }
 
 .dashedcue span {
-  @apply underline underline-offset-4 decoration-primary-600 decoration-dashed;
+  @apply underline underline-offset-4 decoration-primary-600 decoration-dashed decoration-2;
+}
+
+/* Card hover effects */
+.card-hover {
+  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+}
+
+/* Focus styles */
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2;
+}
+
+/* Button styles */
+.btn-primary {
+  @apply bg-primary-600 text-white px-4 py-2 rounded-lg font-medium hover:bg-primary-700 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:ring-offset-2 transition-colors duration-200;
+}
+
+.btn-secondary {
+  @apply bg-gray-100 text-gray-700 px-4 py-2 rounded-lg font-medium hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 transition-colors duration-200;
+}
+
+/* Input styles */
+.input-field {
+  @apply block w-full rounded-lg border-gray-300 shadow-sm focus:border-primary-500 focus:ring-primary-500 transition-colors duration-200;
+}
+
+/* Animation utilities */
+.fade-in {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Improved prose styles */
+.prose {
+  @apply max-w-none;
+}
+
+.prose h1 {
+  @apply text-4xl font-bold text-gray-900 mb-6 leading-tight;
+}
+
+.prose h2 {
+  @apply text-3xl font-semibold text-gray-900 mb-4 mt-8 leading-tight;
+}
+
+.prose h3 {
+  @apply text-2xl font-semibold text-gray-900 mb-3 mt-6 leading-tight;
+}
+
+.prose p {
+  @apply text-gray-600 leading-relaxed mb-4;
+}
+
+.prose a {
+  @apply text-primary-600 hover:text-primary-700 font-medium transition-colors duration-200;
+}
+
+/* Grid improvements */
+.grid-auto-fit {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-auto-fill {
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
 }

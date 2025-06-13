@@ -4,32 +4,31 @@ import { Image } from "astro:assets";
 const { myItem, href } = Astro.props;
 ---
 
-<a href={href}>
-  <div class="flex flex-row gap-2.5 items-center">
+<a href={href} class="group">
+  <div class="flex flex-row gap-3 items-center py-3 px-4 rounded-lg hover:bg-gray-50 transition-all duration-200">
     {
       myItem.image ? (
         <Image
-          class="h-5 w-5 flex-shrink-0"
+          class="h-6 w-6 flex-shrink-0 rounded"
           src={myItem.image}
           alt={myItem.title}
           loading="lazy"
         />
       ) : (
-        <Icon
-          class="h-5 w-5 flex-shrink-0 text-gray-200 dark:text-gray-700"
-          name="tabler:circle-filled"
-        />
+        <div class="h-6 w-6 flex-shrink-0 bg-gradient-to-br from-primary-100 to-primary-200 rounded flex items-center justify-center">
+          <span class="text-primary-600 font-semibold text-xs">{myItem.title.charAt(0)}</span>
+        </div>
       )
     }
-    <span class="font-semibold dark:text-gray-50 whitespace-nowrap card-title">
+    <span class="font-semibold text-gray-900 whitespace-nowrap card-title group-hover:text-primary-600 transition-colors duration-200">
       {myItem.title}
     </span>
     <Icon
-      class="h-5 w-5 flex-shrink-0 text-gray-500 dark:text-gray-300"
+      class="h-4 w-4 flex-shrink-0 text-gray-300"
       name="tabler:minus"
     />
     <span
-      class="text-gray-500 dark:text-gray-300 truncate text-sm shrink card-description"
+      class="text-gray-600 truncate text-sm shrink card-description"
     >
       {myItem.description}
     </span>
