@@ -20,7 +20,7 @@ const headerSchema = z.object({
   banner: z.object({
     show: z.boolean(),
     text: z.string(),
-    link: z.string().url(),
+    link: z.string(),
     brandText: z.string(),
   }),
   navbar: z.object({
@@ -35,7 +35,7 @@ const headerSchema = z.object({
   }),
   actionButton: z.object({
     text: z.string(),
-    href: z.string().url(),
+    href: z.string(),
   }),
 });
 
