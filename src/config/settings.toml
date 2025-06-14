@@ -103,10 +103,6 @@ brandText = ""
 colorModeSelector = false
 
 [[header.navbar.links]]
-name = "Blog"
-href = "/blog"
-
-[[header.navbar.links]]
 name = "Compare Tools"
 href = "/"
 

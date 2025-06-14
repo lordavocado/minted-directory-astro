@@ -6,32 +6,42 @@ import config from "@util/themeConfig";
 const socials = Object.values(config.footer.socials);
 const socialNames = Object.keys(config.footer.socials);
 
+// Group categories by type for better organization
+const professionalCategories = config.directoryData.tags
+  ?.filter((e) => e && e.name && ["professional_linkedin", "ecommerce_business", "team_staff", "marketing_materials"].includes(e.key))
+  .map((e) => ({
+    title: e.name,
+    link: `/tags/${e.key}`,
+    emoji: e.emoji
+  }))
+  .slice(0, 4);
+
+const creativeCategories = config.directoryData.tags
+  ?.filter((e) => e && e.name && ["social_media", "creative_artistic", "content_creation", "personal_branding"].includes(e.key))
+  .map((e) => ({
+    title: e.name,
+    link: `/tags/${e.key}`,
+    emoji: e.emoji
+  }))
+  .slice(0, 4);
+
 const navigation = [
   {
-    title: "Directory",
+    title: "AI Headshot Tools",
     links: [
-      { title: "Browse", link: "/" },
+      { title: "Compare All Tools", link: "/" },
+      { title: "Featured Tools", link: "/#featured" },
+      { title: "Free Tools", link: "/tags/free" },
+      { title: "Submit Tool", link: "#" },
     ],
-  },
-  {
-    title: "Categories",
-    links: config.directoryData.tags
-      ?.filter((e) => e && e.name)
-      .map((e) => ({
-        title: e.name,
-        link: `/tags/${e.key}`,
-      }))
-      .slice(0, 4),
-  },
-  {
-    title: "Blog",
-    links: [{ title: "Articles", link: "/blog" }],
   },
   {
     title: "Legal",
     links: [
       { title: "Privacy Policy", link: "/legal/privacy-policy" },
       { title: "Terms of Service", link: "/legal/terms-of-service" },
+      { title: "Cookie Policy", link: "/legal/cookies" },
+      { title: "Contact", link: "/contact" },
     ],
   },
 ];
@@ -44,11 +54,52 @@ const navigation = [
   <h2 id="footer-heading" class="sr-only">Footer</h2>
   <div class="mx-auto max-w-7xl px-6 pb-8 pt-16 sm:pt-24 lg:px-8 lg:pt-32">
     <div class="xl:grid xl:grid-cols-3 xl:gap-8">
-      <div class="space-y-8">
+      <!-- Logo and Description Section -->
+      <div class="space-y-8 xl:col-span-1">
         <AppLogo />
-        <p class="text-sm text-gray-600 max-w-md leading-relaxed">
-          {config.footer.description}
-        </p>
+        <div class="space-y-6">
+          <p class="text-sm text-gray-600 max-w-md leading-relaxed">
+            {config.footer.description}
+          </p>
+          
+          <!-- Professional Categories -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-3">
+              Professional Use Cases
+            </h3>
+            <div class="grid grid-cols-1 gap-2">
+              {professionalCategories?.map((item) => (
+                <a
+                  href={item.link}
+                  class="inline-flex items-center gap-2 text-sm leading-6 text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span class="text-base">{item.emoji}</span>
+                  {item.title}
+                </a>
+              ))}
+            </div>
+          </div>
+
+          <!-- Creative Categories -->
+          <div>
+            <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-3">
+              Creative & Social
+            </h3>
+            <div class="grid grid-cols-1 gap-2">
+              {creativeCategories?.map((item) => (
+                <a
+                  href={item.link}
+                  class="inline-flex items-center gap-2 text-sm leading-6 text-gray-600 hover:text-gray-900 transition-colors duration-200"
+                >
+                  <span class="text-base">{item.emoji}</span>
+                  {item.title}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+        
+        <!-- Social Links -->
         <div class="flex space-x-6">
           {
             socials.map((item, index) => (
@@ -73,16 +124,18 @@ const navigation = [
           }
         </div>
       </div>
-      <div class="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
-        {
-          [...Array(2).keys()].map((count) => (
-            <div class="md:grid md:grid-cols-2 md:gap-8">
+      
+      <!-- Navigation Links -->
+      <div class="mt-16 grid grid-cols-1 gap-8 xl:col-span-2 xl:mt-0">
+        <div class="md:grid md:grid-cols-2 md:gap-8">
+          {
+            navigation.map((section) => (
               <div>
                 <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">
-                  {navigation[count].title}
+                  {section.title}
                 </h3>
                 <ul role="list" class="space-y-3">
-                  {navigation[count].links.map((item) => (
+                  {section.links.map((item) => (
                     <li>
                       <a
                         href={item.link}
@@ -94,35 +147,17 @@ const navigation = [
                   ))}
                 </ul>
               </div>
-
-              <div class="mt-10 md:mt-0">
-                <h3 class="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">
-                  {navigation[count + 2].title}
-                </h3>
-                <ul role="list" class="space-y-3">
-                  {navigation[count + 2].links.map((item) => (
-                    <li>
-                      <a
-                        href={item.link}
-                        class="text-sm leading-6 text-gray-600 hover:text-gray-900 transition-colors duration-200"
-                      >
-                        {item.title}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          ))
-        }
+            ))
+          }
+        </div>
       </div>
     </div>
-    <div
-      class="mt-16 border-t border-gray-200 pt-8 sm:mt-20 lg:mt-24"
-    >
+    
+    <!-- Bottom Copyright -->
+    <div class="mt-16 border-t border-gray-200 pt-8 sm:mt-20 lg:mt-24">
       <p class="text-xs leading-5 text-gray-500">
         &copy; {new Date().getFullYear()}
-        {config.general.title}. All rights reserved.
+        {config.general.title}. All rights reserved. Find and compare the best AI headshot generators for professional photos.
       </p>
     </div>
   </div>
