@@ -26,13 +26,6 @@ icon = "tabler:exclamation-mark"
 [directoryUI.grid.card]
 image = true
 
-[directoryUI.grid.submit]
-show = true
-first = false
-title = "Submit a template"
-description = "Submit a template to show off a good project to other people."
-hideable = true
-
 [directoryUI.featured]
 showOnAllPages = true
 showOnSide = true

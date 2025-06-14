@@ -106,9 +106,13 @@ colorModeSelector = false
 name = "Compare Tools"
 href = "/"
 
+[[header.navbar.links]]
+name = "Reviews"
+href = "/reviews"
+
 [header.actionButton]
-text = "Submit Tool"
-href = "#"
+text = "Compare Tools"
+href = "/#compare"
 
 [footer]
 description = "Find and compare the best AI headshot generators for professional photos, LinkedIn profiles, and social media. Compare features, pricing, and quality to choose the perfect tool for your needs."

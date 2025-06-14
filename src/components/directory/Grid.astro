@@ -1,11 +1,14 @@
 ---
 import { getListings } from "../../lib/getListings";
 import PureGrid from "./PureGrid.astro";
+import Compare from "./Compare.vue";
 
 const allListings = (await getListings()).sort(
   (a, b) => Number(b.data.featured) - Number(a.data.featured),
 );
 ---
+
+<Compare client:load allTools={allListings.map(listing => ({ ...listing.data, id: listing.id }))} />
 
 <PureGrid id="directory-grid" listings={allListings} />
 
