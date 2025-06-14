@@ -14,7 +14,9 @@ const type = "small-horizontal";
       myItem.image ? (
         <img
           class="w-16 h-16 object-cover group-hover:scale-105 transition-transform duration-300"
-          src={myItem.image}
+          src={myItem.image.src}
+          width={myItem.image.width}
+          height={myItem.image.height}
           alt={myItem.title}
           loading="lazy"
         />

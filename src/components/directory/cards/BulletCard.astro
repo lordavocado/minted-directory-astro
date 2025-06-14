@@ -9,7 +9,9 @@ const { myItem, href } = Astro.props;
       myItem.image ? (
         <img
           class="h-6 w-6 flex-shrink-0 rounded object-cover"
-          src={myItem.image}
+          src={myItem.image.src}
+          width={myItem.image.width}
+          height={myItem.image.height}
           alt={myItem.title}
           loading="lazy"
         />

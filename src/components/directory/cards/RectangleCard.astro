@@ -8,7 +8,7 @@ const { myItem, href } = Astro.props;
   class="block h-full bg-white border border-gray-200 hover:border-gray-300 hover:shadow-lg rounded-xl relative group transition-all duration-300 overflow-hidden card-hover">
   { myItem.featured ? <DirectoryFeaturedTag class="ml-6"  /> : <></> }
   { myItem.image ? <img class="w-full h-48 rounded-t-xl object-cover group-hover:scale-105 transition-transform duration-300"
-    src={myItem.image} alt={myItem.title} /> :  <div
+    src={myItem.image.src} width={myItem.image.width} height={myItem.image.height} alt={myItem.title} /> :  <div
     class="w-full h-48 px-4 text-center flex justify-center items-center rounded-t-xl font-bold text-xl bg-gradient-to-br from-gray-50 to-gray-100 text-gray-600">
     {myItem.title }
   </div> }
