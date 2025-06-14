@@ -8,21 +8,14 @@ const { myItem, href } = Astro.props;
   class="block h-full bg-white border border-gray-200 hover:border-gray-300 hover:shadow-xl rounded-xl relative group transition-all duration-300 overflow-hidden card-hover">
   { myItem.featured ? <DirectoryFeaturedTag class="ml-6"  /> : <></> }
   
-  <!-- Logo and Image Section -->
-  <div class="relative">
-    { myItem.image ? 
-      <img class="w-full h-56 rounded-t-xl object-cover group-hover:scale-105 transition-transform duration-300"
-        src={myItem.image.src} width={myItem.image.width} height={myItem.image.height} alt={myItem.title} /> :  
-      <div class="w-full h-56 px-4 text-center flex justify-center items-center rounded-t-xl font-bold text-xl bg-gradient-to-br from-gray-50 to-gray-100 text-gray-600">
-        {myItem.title }
+  <!-- Logo Section -->
+  <div class="relative bg-gradient-to-br from-gray-50 to-gray-100 p-8 flex items-center justify-center h-56">
+    { myItem.logo ? 
+      <img class="w-16 h-16 object-contain group-hover:scale-110 transition-transform duration-300"
+        src={myItem.logo} alt={`${myItem.title} logo`} /> :  
+      <div class="w-16 h-16 bg-gradient-to-br from-primary-100 to-primary-200 rounded-xl flex items-center justify-center">
+        <span class="text-primary-600 font-bold text-2xl">{myItem.title.charAt(0)}</span>
       </div> 
-    }
-    
-    <!-- Logo overlay -->
-    { myItem.logo && 
-      <div class="absolute top-4 right-4 w-12 h-12 bg-white rounded-lg shadow-lg flex items-center justify-center p-2">
-        <img src={myItem.logo} alt={`${myItem.title} logo`} class="w-8 h-8 object-contain" />
-      </div>
     }
   </div>
   

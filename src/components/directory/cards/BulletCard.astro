@@ -6,13 +6,11 @@ const { myItem, href } = Astro.props;
 <a href={href} class="group">
   <div class="flex flex-row gap-3 items-center py-3 px-4 rounded-lg hover:bg-gray-50 transition-all duration-200">
     {
-      myItem.image ? (
+      myItem.logo ? (
         <img
-          class="h-6 w-6 flex-shrink-0 rounded object-cover"
-          src={myItem.image.src}
-          width={myItem.image.width}
-          height={myItem.image.height}
-          alt={myItem.title}
+          class="h-6 w-6 flex-shrink-0 rounded object-contain"
+          src={myItem.logo}
+          alt={`${myItem.title} logo`}
           loading="lazy"
         />
       ) : (

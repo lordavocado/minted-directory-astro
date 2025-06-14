@@ -9,20 +9,18 @@ const type = "small-horizontal";
   href={href}
 >
   { myItem.featured ? <DirectoryFeaturedTag class="ml-6"  /> : <></> }
-  <div class="flex-none mr-4 rounded-lg w-16 h-16 overflow-hidden">
+  <div class="flex-none mr-4 rounded-lg w-16 h-16 overflow-hidden bg-gradient-to-br from-gray-50 to-gray-100 flex items-center justify-center">
     {
-      myItem.image ? (
+      myItem.logo ? (
         <img
-          class="w-16 h-16 object-cover group-hover:scale-105 transition-transform duration-300"
-          src={myItem.image.src}
-          width={myItem.image.width}
-          height={myItem.image.height}
-          alt={myItem.title}
+          class="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+          src={myItem.logo}
+          alt={`${myItem.title} logo`}
           loading="lazy"
         />
       ) : (
-        <div class="w-16 h-16 bg-gradient-to-br from-gray-100 to-gray-200 rounded-lg flex items-center justify-center">
-          <span class="text-gray-500 font-semibold text-sm">{myItem.title.charAt(0)}</span>
+        <div class="w-10 h-10 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg flex items-center justify-center">
+          <span class="text-primary-600 font-semibold text-sm">{myItem.title.charAt(0)}</span>
         </div>
       )
     }
