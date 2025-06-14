@@ -1,5 +1,4 @@
 ---
-import { Image } from "astro:assets";
 import DirectoryFeaturedTag from "../FeaturedTag.astro";
 const { myItem, href } = Astro.props;
 const type = "small-horizontal";
@@ -13,7 +12,7 @@ const type = "small-horizontal";
   <div class="flex-none mr-4 rounded-lg w-16 h-16 overflow-hidden">
     {
       myItem.image ? (
-        <Image
+        <img
           class="w-16 h-16 object-cover group-hover:scale-105 transition-transform duration-300"
           src={myItem.image}
           alt={myItem.title}
