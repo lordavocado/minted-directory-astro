@@ -26,6 +26,13 @@ icon = "tabler:exclamation-mark"
 [directoryUI.grid.card]
 image = true
 
+[directoryUI.grid.submit]
+show = true
+first = false
+title = "Submit Your Tool"
+description = "Add your AI headshot generator to our directory"
+hideable = true
+
 [directoryUI.featured]
 showOnAllPages = true
 showOnSide = true
