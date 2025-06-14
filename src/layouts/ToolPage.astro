@@ -27,15 +27,28 @@ const seoDescription = `${description} Compare features, pricing, quality, and u
           <div class="mb-12">
             <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8">
               <div class="flex-1">
-                {frontmatter.image && (
-                  <img 
-                    class="w-20 h-20 rounded-xl object-cover mb-6 shadow-lg" 
-                    src={frontmatter.image.src} 
-                    width={frontmatter.image.width}
-                    height={frontmatter.image.height}
-                    alt={`${title} logo`} 
-                  />
+                <!-- Logo Display -->
+                {(frontmatter.logo || frontmatter.image) && (
+                  <div class="flex items-center gap-4 mb-6">
+                    {frontmatter.logo && (
+                      <img 
+                        class="w-16 h-16 rounded-xl object-contain bg-white shadow-lg p-2" 
+                        src={frontmatter.logo} 
+                        alt={`${title} logo`} 
+                      />
+                    )}
+                    {frontmatter.image && !frontmatter.logo && (
+                      <img 
+                        class="w-16 h-16 rounded-xl object-cover shadow-lg" 
+                        src={frontmatter.image.src} 
+                        width={frontmatter.image.width}
+                        height={frontmatter.image.height}
+                        alt={`${title} preview`} 
+                      />
+                    )}
+                  </div>
                 )}
+                
                 <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                   {title} Review 2025
                 </h1>
@@ -126,15 +139,28 @@ const seoDescription = `${description} Compare features, pricing, quality, and u
           <div class="mb-12">
             <div class="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-6 mb-8">
               <div class="flex-1">
-                {frontmatter.image && (
-                  <img 
-                    class="w-20 h-20 rounded-xl object-cover mb-6 shadow-lg" 
-                    src={frontmatter.image.src} 
-                    width={frontmatter.image.width}
-                    height={frontmatter.image.height}
-                    alt={`${title} logo`} 
-                  />
+                <!-- Logo Display -->
+                {(frontmatter.logo || frontmatter.image) && (
+                  <div class="flex items-center gap-4 mb-6">
+                    {frontmatter.logo && (
+                      <img 
+                        class="w-16 h-16 rounded-xl object-contain bg-white shadow-lg p-2" 
+                        src={frontmatter.logo} 
+                        alt={`${title} logo`} 
+                      />
+                    )}
+                    {frontmatter.image && !frontmatter.logo && (
+                      <img 
+                        class="w-16 h-16 rounded-xl object-cover shadow-lg" 
+                        src={frontmatter.image.src} 
+                        width={frontmatter.image.width}
+                        height={frontmatter.image.height}
+                        alt={`${title} preview`} 
+                      />
+                    )}
+                  </div>
                 )}
+                
                 <h1 class="text-4xl lg:text-5xl font-bold text-gray-900 mb-4 leading-tight">
                   {title} Review 2025
                 </h1>
