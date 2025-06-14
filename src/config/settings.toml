@@ -3,32 +3,95 @@
 theme = 'brookmint'
 
 [general]
-title = "Directory"
+title = "Best Headshot Generator"
 logo = ""
-iconLogo = "tabler:grid-dots"
+iconLogo = "tabler:camera"
 
 [general.seo]
-name = "Directory"
-description = "A clean directory for your entities."
-url = "https://yourdomain.com"
+name = "Best Headshot Generator - Compare AI Headshot Tools"
+description = "Find and compare the best AI headshot generators. Professional headshots for LinkedIn, business profiles, and social media. Compare features, pricing, and quality."
+url = "https://bestheadshotgenerator.com"
 
 [directoryData.source]
 name = "json"    # default, mock, sheets, json
 links = "normal"
-linksOutbound = false
+linksOutbound = true
 
 [directoryData.tagPages]
-title = "{0} Items"
+title = "{0} AI Headshot Generators"
 
 [directoryData.search]
-placeholder = "Search among {0} listings"
+placeholder = "Search among {0} AI headshot generators"
 
 [[directoryData.tags]]
-key = "example"
-name = "Example"
+key = "professional_linkedin"
+name = "Professional LinkedIn"
 color = "blue"
-emoji = "📝"
-description = "Example category for demonstration."
+emoji = "💼"
+description = "High-quality professional headshots optimized for LinkedIn profiles, corporate websites, and business directories."
+
+[[directoryData.tags]]
+key = "social_media"
+name = "Social Media"
+color = "purple"
+emoji = "📱"
+description = "Engaging profile pictures designed for social media platforms like Facebook, Instagram, Twitter, and dating apps."
+
+[[directoryData.tags]]
+key = "creative_artistic"
+name = "Creative & Artistic"
+color = "pink"
+emoji = "🎨"
+description = "Artistic interpretations including anime styles, artistic renderings, fantasy themes, and creative backgrounds."
+
+[[directoryData.tags]]
+key = "ecommerce_business"
+name = "E-commerce & Business"
+color = "green"
+emoji = "🏢"
+description = "Professional headshots for business owners, entrepreneurs, real estate agents, and service providers."
+
+[[directoryData.tags]]
+key = "dating_profiles"
+name = "Dating Profiles"
+color = "red"
+emoji = "💕"
+description = "Attractive, approachable headshots designed for dating apps and platforms with natural expressions."
+
+[[directoryData.tags]]
+key = "gaming_avatars"
+name = "Gaming Avatars"
+color = "indigo"
+emoji = "🎮"
+description = "3D avatars and character representations for gaming platforms, VR environments, and virtual worlds."
+
+[[directoryData.tags]]
+key = "content_creation"
+name = "Content Creation"
+color = "orange"
+emoji = "📹"
+description = "Profile pictures for content creators, influencers, YouTubers, and bloggers with variety in styles."
+
+[[directoryData.tags]]
+key = "marketing_materials"
+name = "Marketing Materials"
+color = "yellow"
+emoji = "📊"
+description = "Professional headshots for marketing campaigns, advertisements, company brochures, and promotional materials."
+
+[[directoryData.tags]]
+key = "team_staff"
+name = "Team Photos"
+color = "gray"
+emoji = "👥"
+description = "Consistent professional headshots for entire teams or organizations with standardized styling."
+
+[[directoryData.tags]]
+key = "personal_branding"
+name = "Personal Branding"
+color = "blue"
+emoji = "⭐"
+description = "Professional headshots for speakers, consultants, coaches, and thought leaders emphasizing personality."
 
 [header.banner]
 show = false
@@ -43,15 +106,19 @@ colorModeSelector = false
 name = "Blog"
 href = "/blog"
 
+[[header.navbar.links]]
+name = "Compare Tools"
+href = "/"
+
 [header.actionButton]
-text = "Submit"
+text = "Submit Tool"
 href = "#"
 
 [footer]
-description = "A clean directory for your entities."
+description = "Find and compare the best AI headshot generators for professional photos, LinkedIn profiles, and social media. Compare features, pricing, and quality to choose the perfect tool for your needs."
 
 [footer.socials.x]
-link = "https://x.com/yourusername"
+link = "https://x.com/bestheadshot"
 
 [footer.socials.youtube]
-link = "https://www.youtube.com/@yourchannel"
+link = "https://www.youtube.com/@bestheadshotgenerator"

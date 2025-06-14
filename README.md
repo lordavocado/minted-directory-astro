@@ -1,125 +1,125 @@
 <div align="center">
-  <h1>Minted Directory Astro</h1>
-  <p>Markdown driven directory template. Built with Astro and Tailwindcss. Optimized for SEO. Beautiful Customizable Style</p>
+  <h1>Best Headshot Generator</h1>
+  <p>Find and compare the best AI headshot generators for professional photos, LinkedIn profiles, and social media. Built with Astro and optimized for SEO.</p>
 </div>
 
 <br/>
 
 <div align="center">
-  <img src="https://github.com/user-attachments/assets/febde860-00be-408b-8a13-41953f7178e1" alt="Minted Directory Screenshot" />
+  <img src="https://github.com/user-attachments/assets/febde860-00be-408b-8a13-41953f7178e1" alt="Best Headshot Generator Screenshot" />
 </div>
 
 <br/>
 
 ## Features:
-+ 🖌️ Add listings from is possible from different formats: `markdown`, `csv`, `json`, `google sheets`, `notion`, `airtable`.
-+ 🔋 SEO optimized and programmatic SEO out of the box
-+ 💻 Pre-built components for directories.
-+ 💅 Customizable styles.
-+ 🌙 Dark/Light mode
-+ 💸 Sponsored Content
-+ 👀 Tags + Search
++ 🎯 **AI Headshot Generator Directory** - Compare top tools like HeadshotPro, Aragon AI, Dreamwave, and more
++ 📊 **Detailed Comparisons** - Features, pricing, quality ratings, and processing times
++ 🔍 **Smart Search & Filtering** - Find tools by use case, pricing, and features
++ 💼 **Use Case Categories** - Professional LinkedIn, Social Media, Creative, Business, and more
++ ⚡ **Fast & SEO Optimized** - Built with Astro for maximum performance
++ 📱 **Responsive Design** - Perfect on desktop and mobile
++ 🌙 **Dark/Light Mode** - Comfortable viewing in any environment
+
+## AI Headshot Generator Categories
+
+### Professional Use Cases
+- **Professional LinkedIn/Corporate** - High-quality business headshots
+- **E-commerce/Business Profiles** - For entrepreneurs and service providers  
+- **Team Photos/Staff Directories** - Consistent styling for organizations
+- **Marketing Materials** - Professional photos for campaigns and brochures
+- **Personal Branding** - For speakers, consultants, and thought leaders
+
+### Creative & Social
+- **Social Media Profiles** - Engaging photos for Facebook, Instagram, Twitter
+- **Creative/Artistic Portraits** - Anime, artistic renderings, fantasy themes
+- **Dating Profiles** - Attractive, approachable headshots for dating apps
+- **Gaming Avatars** - 3D avatars for gaming and VR environments
+- **Content Creation** - Profile pictures for influencers and YouTubers
+
+## Featured AI Headshot Generators
+
+### Top Rated Tools
+- **HeadshotPro** - Studio-quality 4K headshots with Flux AI technology
+- **Aragon AI** - Fastest processing (30 minutes) with industry-specific styling
+- **Dreamwave** - Most realistic results from MIT/Google experts
+- **BetterPic** - 4K quality with 150+ style combinations
+- **AI Ease** - Completely free with professional and creative styles
+
+### Free Options
+- **AI Ease** - Unlimited free headshots with creative styles
+- **Supawork AI** - 300+ styles with no signup required
+- **Canva AI** - Basic headshots integrated with Canva ecosystem
 
 ## Getting Started
 
 ### Local Development
 
-Duplicate the template then clone the repository.
-
+Clone the repository:
 ```sh
-git clone git@github.com:youraccount/projectname.git my-directory
+git clone https://github.com/youraccount/best-headshot-generator.git
+cd best-headshot-generator
 ```
 
-Or use the github cli to create a repository based on the template and clone in one command:
-
-```sh
-gh repo create my-directory --template masterkram/minted-directory-astro --private --clone
-```
-
-Go to the cloned folder:
-```sh
-cd my-directory
-```
-
-Install dependencies
-
+Install dependencies:
 ```sh
 pnpm install
 ```
 
-Run the website:
-
+Run the development server:
 ```sh
 pnpm dev
 ```
 
-Congrats :tada:
+### Adding New AI Headshot Generators
 
-You can start customizing and building your directory.
+Add new tools to `src/data/directory/directory.json`:
 
-## Adding Content
+```json
+{
+  "id": "tool-name",
+  "title": "Tool Name",
+  "description": "Brief description highlighting key features and benefits",
+  "link": "https://tool-website.com",
+  "tags": ["professional_linkedin", "social_media"],
+  "featured": false,
+  "image": "https://images.pexels.com/photos/example.jpeg"
+}
+```
 
-Adding content to the directory can be done using one of the following formats:
-+ markdown
-+ json
-+ csv
-+ notion
-+ google sheets
-+ airtable
+### Available Categories (Tags)
+- `professional_linkedin` - Professional LinkedIn/Corporate Headshots
+- `social_media` - Social Media Profiles  
+- `creative_artistic` - Creative/Artistic Portraits
+- `ecommerce_business` - E-commerce/Business Profiles
+- `dating_profiles` - Dating Profiles
+- `gaming_avatars` - Gaming Avatars
+- `content_creation` - Content Creation
+- `marketing_materials` - Marketing Materials
+- `team_staff` - Team Photos/Staff Directories
+- `personal_branding` - Personal Branding
 
-Remember that listings will not be shown on the live website until the site is re-built and deployed. This is done to ensure the fastest possible performance by serving static html, css and js.
+## SEO Optimization
 
-### Using markdown listings:
-1. add markdown files to the `src/data/directory` folder. All markdown files will be automatically loaded as listings.
-2. You must specify required properties of a listing such as title and description in the [frontmatter]() of the file
-
-### Using json listings:
-1. add a single json file: `src/data/directory/directory.json`
-2. in this json file, the root element is an array. This array can contain objects which are the listings of the directory. These require the properties of `id`, `name` and `description`.
-
-### Using csv listings:
-1. add a single csv file: `src/data/directory/directory.csv`
-2. add rows to this csv file, these require the properties of `id`, `name` and `description`.
-
-### Using google sheets listings:
-1. Create a [google sheets](https://docs.google.com/spreadsheets/u/0/) document.
-2. You need to select your table and click `Format > Convert to table`
-3. Make it publicly shareable. When you share the link. copy the id
-4. Go to `settings.toml`, here you need to set the `source=sheets` and `key = ` the copied id of the file
-
-Use this spreadsheet as a starting point: [directory google sheet data](https://docs.google.com/spreadsheets/d/1BKVVFysQT8ZuPY8hUp--jwTrN-U20TrtML0idECIWmc/edit?usp=sharing)
-
-### Using notion listings:
-
-### Using airtable listings:
-
-
-## Customization
-
-To customize the directory style:
-+ Change the `--color-primary-x00` variables, `--color-gray-x00` variables in the `src/styles/global.css`
-+ Change the font:
-  + install from [fontsource]()
-  + import font in `BaseLayout.astro`
-  + change the `--font-sans` variable in `global.css`
-+ Customize the `src/data/config/settings.toml` to your preferences.
-
-### Pre-made styles:
-- spearmint
-- peppermint
-
-### Adding Content
-
-Add listings by adding markdown files to `/src/content/directory`
+The site is optimized for AI headshot generator related keywords:
+- "best AI headshot generator"
+- "AI headshot generator comparison"
+- "professional AI headshots"
+- "LinkedIn AI headshot"
+- "AI headshot tools"
 
 ## Deployment
 
-Deploy as a static site for best SEO performance:
-
+Deploy as a static site:
 ```bash
 pnpm run build
 ```
 
-## Community
+Perfect for deployment on Netlify, Vercel, or any static hosting provider.
 
-[Join the discord](https://discord.gg/5UbrTNzX7y)
+## Contributing
+
+We welcome contributions! Please feel free to submit new AI headshot generators, improve existing listings, or enhance the comparison features.
+
+## License
+
+MIT License - see LICENSE file for details.
