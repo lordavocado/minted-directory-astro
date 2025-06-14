@@ -15,7 +15,7 @@ url = "https://bestheadshotgenerator.com"
 [directoryData.source]
 name = "json"    # default, mock, sheets, json
 links = "normal"
-linksOutbound = true
+linksOutbound = false
 
 [directoryData.tagPages]
 title = "{0} AI Headshot Generators"

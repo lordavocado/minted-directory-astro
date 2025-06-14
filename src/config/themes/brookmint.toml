@@ -6,7 +6,7 @@ emoji = true
 pageHeader = 'title'
 
 [directoryUI.search]
-placeholder = "Search among {0} agent frameworks"
+placeholder = "Search among {0} AI headshot generators"
 showCount = true
 icon = "tabler:search"
 
@@ -16,7 +16,7 @@ intersection = false
 
 [directoryUI.grid]
 list = false
-type = "small-card-grid"
+type = "rectangle-card-grid"
 
 [directoryUI.grid.emptyState]
 text = "Seems that this entry is missing from the archives."

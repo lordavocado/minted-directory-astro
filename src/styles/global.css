@@ -91,7 +91,7 @@ body {
 
 /* Card hover effects */
 .card-hover {
-  @apply transition-all duration-300 hover:shadow-lg hover:-translate-y-1;
+  @apply transition-all duration-300 hover:shadow-xl hover:-translate-y-2;
 }
 
 /* Focus styles */
@@ -161,4 +161,38 @@ body {
 
 .grid-auto-fill {
   grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+}
+
+/* Line clamp utilities */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.line-clamp-4 {
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Enhanced card styles */
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+}
+
+/* Responsive card heights */
+@media (min-width: 640px) {
+  .rectangle-card {
+    min-height: 420px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .rectangle-card {
+    min-height: 450px;
+  }
 }
